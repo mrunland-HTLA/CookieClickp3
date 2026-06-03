@@ -1,15 +1,28 @@
 import java.util.Timer;
 import java.util.TimerTask;
+/*
+TODO:
+Make the numbers increase when we buy more upgrades
+
+
+ */
+
 
 public class Game {
-    int cookieCounter;
-    int cookiesPerClick;
-    int cookiesPerSecond;
+    protected int cookieCounter;
+    private int cookiesPerClick;
+    private int cookiesPerSecond;
+    protected int upgrade1Cost;
+    protected int upgrade2Cost;
+    private int upgradeCount;
 
     public Game () {
         cookieCounter = 0;
         cookiesPerClick = 1;
         cookiesPerSecond = 0;
+        upgrade1Cost = 5;
+        upgrade2Cost = 25;
+        upgradeCount = 0;
         
 
         Timer slowCooker = new Timer();
@@ -30,16 +43,22 @@ public class Game {
         cookieCounter+=cookiesPerClick;
     }
     public void upgradeButton1() {
-        if (cookieCounter >= 5 ) {
+        if (cookieCounter >= upgrade1Cost ) {
             cookiesPerClick++;
-            cookieCounter -= 5;
+            cookieCounter -= upgrade1Cost;
+            upgradeCount++;
+            upgrade1Cost += upgradeCount;
         }
+
     }
     public void upgradeButton2() {
-        if (cookieCounter >= 25 ) {
+        if (cookieCounter >= upgrade2Cost ) {
             cookiesPerSecond++;
-            cookieCounter -= 25;
+            cookieCounter -= upgrade2Cost;
+            //
+            //
         }
+
     }
 
 }
