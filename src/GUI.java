@@ -47,7 +47,10 @@ public class GUI implements ActionListener {
         upgrade1Cost = new JLabel("Upgrade Cost: " + game.upgrade1Cost);
         upgrade2Cost = new JLabel("Upgrade Cost: " + game.upgrade2Cost);
         cookieButton = new JButton("Cookie");
+        cookieButton.setBackground(new Color(150, 100, 40));
+        //new Color(num,num,num)
         upgradeButton1 = new JButton("Upgrade");
+        upgradeButton1.setBackground(Color.GREEN);
         upgradeButton2 = new JButton("Slow Cooker");
         SuperUpgradeButton = new JButton("Super Upgrade");
 
@@ -76,8 +79,8 @@ public class GUI implements ActionListener {
 
 
         frame.add(buttonPanel,BorderLayout.NORTH);
-        frame.add(textPanel,BorderLayout.CENTER);
-        frame.add(fillerPanel,BorderLayout.SOUTH);
+        fillerPanel.add(textPanel,BorderLayout.NORTH);
+        frame.add(fillerPanel,BorderLayout.CENTER);
         //frame properties
         frame.setBackground(Color.BLACK);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
